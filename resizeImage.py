@@ -1,11 +1,38 @@
+import os
+import numpy as np
 from PIL import Image
 
-im = Image.open("image/dog1.jpg")
-px = im.load()
-w = im.size[0]
-h = im.size[1]
-print(w, h)
-for i in range(w):
-    for j in range(h):
-        px[i, j] = (int(px[i, j][0] / 9), int(px[i, j][1] / 9), int(px[i, j][2] / 9))
-im.save("image/dog1_t.jpg")
+
+class ResizeImage:
+    def __init__(self, file_name, ext, matrix):
+        self.file_name = file_name
+        self.img = Image.open(os.path.join("image", self.file_name))
+        self.w = self.img.size[0]
+        self.h = self.img.size[1]
+        self.img_t = Image.new(mode="RGB", size=(self.w, self.h))
+        self.px = self.img.load()
+        self.px_t = self.img_t.load()
+        self.matrix = matrix
+        self.transform()
+        self.img_t.save(os.path.join("imageTransform",
+                                     self.file_name.rsplit(".", 1)[0] + ext + "." + self.file_name.rsplit(".", 1)[1]))
+
+    def transform(self):
+        for i in range(self.w - 1):
+            for j in range(self.h - 1):
+                self.px_t[i, j] = self.mul(i, j)
+
+    def mul(self, i, j):
+        x = 0
+        y = 0
+        z = 0
+        s = (np.size(self.matrix, 0) - 1) / 2
+        row = np.arange(-(np.size(self.matrix, 0) - 1) / 2, (np.size(self.matrix, 0) - 1) / 2 + 1, 1)
+        col = np.arange(-(np.size(self.matrix, 1) - 1) / 2, (np.size(self.matrix, 1) - 1) / 2 + 1, 1)
+        for r in row:
+            for c in col:
+                if i + r in range(self.w - 1) and j + c in range(self.h - 1):
+                    x = x + self.px[int(i + r), int(j + c)][0] * self.matrix[int(s + r), int(s + c)]
+                    y = y + self.px[int(i + r), int(j + c)][1] * self.matrix[int(s + r), int(s + c)]
+                    z = z + self.px[int(i + r), int(j + c)][2] * self.matrix[int(s + r), int(s + c)]
+        return int(x), int(y), int(z)
