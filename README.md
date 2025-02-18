@@ -39,6 +39,9 @@ I risultati saranno salvati in `output.txt` e i grafici in `Risultati/`.
 Il progetto genera grafici che mostrano:
 1. **Execution Time vs. Threads:** confronto del tempo totale tra elaborazione sequenziale e parallela.
 2. **Speedup:** rapporto tra il tempo sequenziale e il tempo parallelo in base ai thread.
+<p align="center">
+    <img src="Risultati/execution_times__boxBlur.png" width="500">
+</p>
 
 ## 🎯 Performance Analysis
 - L'incremento del numero di thread **riduce significativamente il tempo di esecuzione**.
