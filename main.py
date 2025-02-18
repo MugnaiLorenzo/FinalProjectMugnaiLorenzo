@@ -64,6 +64,7 @@ def plot_results(kernel_name, folder_times, thread_counts):
         plt.legend()
         plt.title(f"Speedup - {folder_name} - Kernel: {kernel_name}")
         plt.savefig(os.path.join(results_dir, f"speedup_{kernel_name}_{folder_name}.png"))
+        plt.close()
 
 
 def extract_resolution(folder):
