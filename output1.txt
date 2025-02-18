@@ -1,0 +1,209 @@
+🖼️ Processing images in folder: 480x270...
+🖼️ Processing images in folder: 960x540...
+🖼️ Processing images in folder: 1920x1080...
+
+📊 Risultati per Kernel: _id
+ - 480x270 - Sequenziale: 53.7631 s
+   2 threads: 30.6241 s | SpeedUp: 1.76x
+   4 threads: 16.1728 s | SpeedUp: 3.32x
+   6 threads: 12.5630 s | SpeedUp: 4.28x
+   8 threads: 10.5026 s | SpeedUp: 5.12x
+   10 threads: 10.5615 s | SpeedUp: 5.09x
+   12 threads: 9.9184 s | SpeedUp: 5.42x
+ - 960x540 - Sequenziale: 403.3443 s
+   2 threads: 225.2930 s | SpeedUp: 1.79x
+   4 threads: 116.0029 s | SpeedUp: 3.48x
+   6 threads: 92.2351 s | SpeedUp: 4.37x
+   8 threads: 74.2665 s | SpeedUp: 5.43x
+   10 threads: 72.5876 s | SpeedUp: 5.56x
+   12 threads: 68.4921 s | SpeedUp: 5.89x
+ - 1920x1080 - Sequenziale: 3153.0601 s
+   2 threads: 1693.6400 s | SpeedUp: 1.86x
+   4 threads: 896.2632 s | SpeedUp: 3.52x
+   6 threads: 688.2049 s | SpeedUp: 4.58x
+   8 threads: 568.0645 s | SpeedUp: 5.55x
+   10 threads: 536.6552 s | SpeedUp: 5.88x
+   12 threads: 510.8724 s | SpeedUp: 6.17x
+🖼️ Processing images in folder: 480x270...
+🖼️ Processing images in folder: 960x540...
+🖼️ Processing images in folder: 1920x1080...
+
+📊 Risultati per Kernel: _rid
+ - 480x270 - Sequenziale: 53.9346 s
+   2 threads: 31.0377 s | SpeedUp: 1.74x
+   4 threads: 16.5005 s | SpeedUp: 3.27x
+   6 threads: 13.4653 s | SpeedUp: 4.01x
+   8 threads: 11.3819 s | SpeedUp: 4.74x
+   10 threads: 11.3420 s | SpeedUp: 4.76x
+   12 threads: 11.1332 s | SpeedUp: 4.84x
+ - 960x540 - Sequenziale: 395.1677 s
+   2 threads: 220.9196 s | SpeedUp: 1.79x
+   4 threads: 115.8029 s | SpeedUp: 3.41x
+   6 threads: 89.5311 s | SpeedUp: 4.41x
+   8 threads: 73.3647 s | SpeedUp: 5.39x
+   10 threads: 73.0637 s | SpeedUp: 5.41x
+   12 threads: 68.3553 s | SpeedUp: 5.78x
+ - 1920x1080 - Sequenziale: 3047.3826 s
+   2 threads: 1692.7364 s | SpeedUp: 1.80x
+   4 threads: 880.3031 s | SpeedUp: 3.46x
+   6 threads: 691.8419 s | SpeedUp: 4.40x
+   8 threads: 551.2173 s | SpeedUp: 5.53x
+   10 threads: 540.6689 s | SpeedUp: 5.64x
+   12 threads: 519.0118 s | SpeedUp: 5.87x
+🖼️ Processing images in folder: 480x270...
+🖼️ Processing images in folder: 960x540...
+🖼️ Processing images in folder: 1920x1080...
+
+📊 Risultati per Kernel: _edgDet
+ - 480x270 - Sequenziale: 53.9122 s
+   2 threads: 31.3804 s | SpeedUp: 1.72x
+   4 threads: 17.0480 s | SpeedUp: 3.16x
+   6 threads: 14.1085 s | SpeedUp: 3.82x
+   8 threads: 12.0702 s | SpeedUp: 4.47x
+   10 threads: 12.4686 s | SpeedUp: 4.32x
+   12 threads: 12.3470 s | SpeedUp: 4.37x
+ - 960x540 - Sequenziale: 397.4409 s
+   2 threads: 226.4505 s | SpeedUp: 1.76x
+   4 threads: 116.5257 s | SpeedUp: 3.41x
+   6 threads: 90.5216 s | SpeedUp: 4.39x
+   8 threads: 76.8027 s | SpeedUp: 5.17x
+   10 threads: 75.1700 s | SpeedUp: 5.29x
+   12 threads: 69.9289 s | SpeedUp: 5.68x
+ - 1920x1080 - Sequenziale: 3074.6657 s
+   2 threads: 1690.5602 s | SpeedUp: 1.82x
+   4 threads: 880.4536 s | SpeedUp: 3.49x
+   6 threads: 693.4014 s | SpeedUp: 4.43x
+   8 threads: 556.0834 s | SpeedUp: 5.53x
+   10 threads: 537.5302 s | SpeedUp: 5.72x
+   12 threads: 500.8226 s | SpeedUp: 6.14x
+🖼️ Processing images in folder: 480x270...
+🖼️ Processing images in folder: 960x540...
+🖼️ Processing images in folder: 1920x1080...
+
+📊 Risultati per Kernel: _shar
+ - 480x270 - Sequenziale: 53.8434 s
+   2 threads: 31.7199 s | SpeedUp: 1.70x
+   4 threads: 17.5713 s | SpeedUp: 3.06x
+   6 threads: 14.9301 s | SpeedUp: 3.61x
+   8 threads: 13.4087 s | SpeedUp: 4.02x
+   10 threads: 13.5850 s | SpeedUp: 3.96x
+   12 threads: 13.6019 s | SpeedUp: 3.96x
+ - 960x540 - Sequenziale: 396.5296 s
+   2 threads: 221.5716 s | SpeedUp: 1.79x
+   4 threads: 116.9381 s | SpeedUp: 3.39x
+   6 threads: 91.5944 s | SpeedUp: 4.33x
+   8 threads: 76.4654 s | SpeedUp: 5.19x
+   10 threads: 74.5628 s | SpeedUp: 5.32x
+   12 threads: 72.3346 s | SpeedUp: 5.48x
+ - 1920x1080 - Sequenziale: 3137.7523 s
+   2 threads: 1688.8004 s | SpeedUp: 1.86x
+   4 threads: 878.4953 s | SpeedUp: 3.57x
+   6 threads: 684.3147 s | SpeedUp: 4.59x
+   8 threads: 558.9193 s | SpeedUp: 5.61x
+   10 threads: 543.2386 s | SpeedUp: 5.78x
+   12 threads: 512.9086 s | SpeedUp: 6.12x
+
+🖼️ Processing images in folder: 480x270...
+🖼️ Processing images in folder: 960x540...
+🖼️ Processing images in folder: 1920x1080...
+
+📊 Risultati per Kernel: gaussian3
+ - 480x270 - Sequenziale: 53.7965 s
+   2 threads: 30.5664 s | SpeedUp: 1.76x
+   4 threads: 16.0719 s | SpeedUp: 3.35x
+   6 threads: 12.6926 s | SpeedUp: 4.24x
+   8 threads: 10.8041 s | SpeedUp: 4.98x
+   10 threads: 10.7932 s | SpeedUp: 4.98x
+   12 threads: 10.1233 s | SpeedUp: 5.31x
+ - 960x540 - Sequenziale: 405.1209 s
+   2 threads: 227.3491 s | SpeedUp: 1.78x
+   4 threads: 115.9256 s | SpeedUp: 3.49x
+   6 threads: 91.9359 s | SpeedUp: 4.41x
+   8 threads: 73.1089 s | SpeedUp: 5.54x
+   10 threads: 74.5229 s | SpeedUp: 5.44x
+   12 threads: 69.0321 s | SpeedUp: 5.87x
+ - 1920x1080 - Sequenziale: 3112.8452 s
+   2 threads: 1712.1402 s | SpeedUp: 1.82x
+   4 threads: 905.8543 s | SpeedUp: 3.44x
+   6 threads: 687.3421 s | SpeedUp: 4.53x
+   8 threads: 573.0564 s | SpeedUp: 5.43x
+   10 threads: 535.7841 s | SpeedUp: 5.81x
+   12 threads: 500.8453 s | SpeedUp: 6.22x
+🖼️ Processing images in folder: 480x270...
+🖼️ Processing images in folder: 960x540...
+🖼️ Processing images in folder: 1920x1080...
+
+📊 Risultati per Kernel: _boxBlur
+ - 480x270 - Sequenziale: 54.0483 s
+   2 threads: 30.9077 s | SpeedUp: 1.75x
+   4 threads: 16.6228 s | SpeedUp: 3.25x
+   6 threads: 13.5752 s | SpeedUp: 3.98x
+   8 threads: 11.6099 s | SpeedUp: 4.66x
+   10 threads: 11.8353 s | SpeedUp: 4.57x
+   12 threads: 11.2901 s | SpeedUp: 4.79x
+ - 960x540 - Sequenziale: 397.5280 s
+   2 threads: 220.9657 s | SpeedUp: 1.80x
+   4 threads: 116.3276 s | SpeedUp: 3.42x
+   6 threads: 91.2274 s | SpeedUp: 4.36x
+   8 threads: 75.2179 s | SpeedUp: 5.29x
+   10 threads: 74.2596 s | SpeedUp: 5.35x
+   12 threads: 70.6273 s | SpeedUp: 5.63x
+ - 1920x1080 - Sequenziale: 3104.5161 s
+   2 threads: 1675.2811 s | SpeedUp: 1.85x
+   4 threads: 877.0125 s | SpeedUp: 3.54x
+   6 threads: 689.7614 s | SpeedUp: 4.50x
+   8 threads: 565.0543 s | SpeedUp: 5.49x
+   10 threads: 545.0383 s | SpeedUp: 5.70x
+   12 threads: 511.0158 s | SpeedUp: 6.08x
+🖼️ Processing images in folder: 480x270...
+🖼️ Processing images in folder: 960x540...
+🖼️ Processing images in folder: 1920x1080...
+
+📊 Risultati per Kernel: gaussian5
+ - 480x270 - Sequenziale: 145.7469 s
+   2 threads: 81.8013 s | SpeedUp: 1.78x
+   4 threads: 43.5643 s | SpeedUp: 3.35x
+   6 threads: 34.7512 s | SpeedUp: 4.19x
+   8 threads: 29.1380 s | SpeedUp: 5.00x
+   10 threads: 30.1526 s | SpeedUp: 4.83x
+   12 threads: 28.3408 s | SpeedUp: 5.14x
+ - 960x540 - Sequenziale: 1108.6119 s
+   2 threads: 604.5003 s | SpeedUp: 1.83x
+   4 threads: 314.7752 s | SpeedUp: 3.52x
+   6 threads: 246.0541 s | SpeedUp: 4.51x
+   8 threads: 199.6313 s | SpeedUp: 5.55x
+   10 threads: 201.8852 s | SpeedUp: 5.49x
+   12 threads: 182.0861 s | SpeedUp: 6.09x
+ - 1920x1080 - Sequenziale: 8506.0405 s
+   2 threads: 4648.3020 s | SpeedUp: 1.83x
+   4 threads: 2403.5798 s | SpeedUp: 3.54x
+   6 threads: 2038.6774 s | SpeedUp: 4.17x
+   8 threads: 1784.2007 s | SpeedUp: 4.77x
+   10 threads: 1799.7593 s | SpeedUp: 4.73x
+   12 threads: 1392.9817 s | SpeedUp: 6.11x
+🖼️ Processing images in folder: 480x270...
+🖼️ Processing images in folder: 960x540...
+🖼️ Processing images in folder: 1920x1080...
+
+📊 Risultati per Kernel: _unsharpMask
+ - 480x270 - Sequenziale: 146.1537 s
+   2 threads: 82.2067 s | SpeedUp: 1.78x
+   4 threads: 43.5880 s | SpeedUp: 3.35x
+   6 threads: 35.0367 s | SpeedUp: 4.17x
+   8 threads: 30.2200 s | SpeedUp: 4.84x
+   10 threads: 30.9012 s | SpeedUp: 4.73x
+   12 threads: 29.5045 s | SpeedUp: 4.95x
+ - 960x540 - Sequenziale: 1087.8745 s
+   2 threads: 596.9850 s | SpeedUp: 1.82x
+   4 threads: 309.8739 s | SpeedUp: 3.51x
+   6 threads: 244.8402 s | SpeedUp: 4.44x
+   8 threads: 195.8822 s | SpeedUp: 5.55x
+   10 threads: 195.8562 s | SpeedUp: 5.55x
+   12 threads: 182.8429 s | SpeedUp: 5.95x
+ - 1920x1080 - Sequenziale: 8516.1687 s
+   2 threads: 4601.0273 s | SpeedUp: 1.85x
+   4 threads: 2385.1934 s | SpeedUp: 3.57x
+   6 threads: 1856.3765 s | SpeedUp: 4.59x
+   8 threads: 1496.8755 s | SpeedUp: 5.69x
+   10 threads: 1501.3291 s | SpeedUp: 5.67x
+   12 threads: 1370.3275 s | SpeedUp: 6.21x
