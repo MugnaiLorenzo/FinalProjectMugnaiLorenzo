@@ -6,7 +6,7 @@ from PIL import Image
 class ResizeImage:
     def __init__(self, file_name, ext, matrix):
         self.file_name = file_name
-        self.img = Image.open(os.path.join("image", self.file_name))
+        self.img = Image.open(self.file_name)
         self.w = self.img.size[0]
         self.h = self.img.size[1]
         self.img_t = Image.new(mode="RGB", size=(self.w, self.h))
@@ -14,8 +14,8 @@ class ResizeImage:
         self.px_t = self.img_t.load()
         self.matrix = matrix
         self.transform()
-        self.img_t.save(os.path.join("imageTransform",
-                                     self.file_name.rsplit(".", 1)[0] + ext + "." + self.file_name.rsplit(".", 1)[1]))
+        self.img_t.save(os.path.join("imageSequential",
+                                     self.file_name.replace("image/","").rsplit(".", 1)[0] + ext + "." + self.file_name.rsplit(".", 1)[1]))
 
     def transform(self):
         for i in range(self.w - 1):

@@ -13,9 +13,8 @@ def init(px: Value):
     shared_px = px
 
 
-def iniziatlitation(file_name, ext, matrix):
-    pool_size = multiprocessing.cpu_count() * 2
-    img = Image.open(os.path.join("image", file_name))
+def iniziatlitation(file_name, ext, matrix, pool_size):
+    img = Image.open( file_name)
     w = img.size[0]
     h = img.size[1]
     img_t = Image.new(mode="RGB", size=(w, h))
@@ -30,7 +29,7 @@ def iniziatlitation(file_name, ext, matrix):
         j = j + 1
     pool.close()
     pool.join()
-    img_t.save(os.path.join("imageParallel", file_name.rsplit(".", 1)[0] + ext + "." + file_name.rsplit(".", 1)[1]))
+    img_t.save(os.path.join("imageParallel", file_name.replace("image/","").rsplit(".", 1)[0] + ext + "." + file_name.rsplit(".", 1)[1]))
 
 
 def worker(comb_array, matrix, w, h):
