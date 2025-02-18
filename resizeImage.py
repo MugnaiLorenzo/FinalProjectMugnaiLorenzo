@@ -13,14 +13,13 @@ class ResizeImage:
         self.px = self.img.load()
         self.px_t = self.img_t.load()
         self.matrix = matrix
-        self.transform()
-        self.img_t.save(os.path.join("imageSequential",
-                                     self.file_name.replace("image/","").rsplit(".", 1)[0] + ext + "." + self.file_name.rsplit(".", 1)[1]))
+
 
     def transform(self):
         for i in range(self.w - 1):
             for j in range(self.h - 1):
                 self.px_t[i, j] = self.mul(i, j)
+        return self.img_t
 
     def mul(self, i, j):
         x = 0

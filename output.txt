@@ -1,0 +1,12 @@
+🖼️ Processing images in folder: 480x270...
+
+📊 Risultati per Kernel: _id
+ - 480x270 - Sequenziale: 13.2278 s
+   2 threads: 5.3813 s | SpeedUp: 2.46x
+   2 threads (Vett.): 3.7523 s | SpeedUp: 3.53x
+   4 threads: 3.6997 s | SpeedUp: 3.58x
+   4 threads (Vett.): 2.9391 s | SpeedUp: 4.50x
+   8 threads: 4.8066 s | SpeedUp: 2.75x
+   8 threads (Vett.): 4.3086 s | SpeedUp: 3.07x
+   12 threads: 6.3087 s | SpeedUp: 2.10x
+   12 threads (Vett.): 6.5160 s | SpeedUp: 2.03x
