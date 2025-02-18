@@ -8,7 +8,12 @@ Questo progetto implementa un'applicazione di **elaborazione parallela di immagi
 - **Elaborazione sequenziale e parallela** per il confronto delle performance.
 - **Benchmarking automatico** con diverse risoluzioni di immagine e numero di thread.
 - **Grafici di analisi** del tempo di esecuzione e dello speedup.
-
+<p align="center">
+    <img src="image/960x540/Img1.jpg" width="500">
+</p>
+<p align="center">
+    <img src="imageParallel/960x540/Img1_edgDet.jpg" width="500">
+</p>
 ## 🛠 Project Structure
 ```
 ├── Kernel.py               # Definizione dei kernel di convoluzione
@@ -42,6 +47,10 @@ Il progetto genera grafici che mostrano:
 <p align="center">
     <img src="Risultati/execution_times__boxBlur.png" width="500">
 </p>
+<p align="center">
+    <img src="Risultati/speedup__boxBlur.png" width="500">
+</p>
+
 
 ## 🎯 Performance Analysis
 - L'incremento del numero di thread **riduce significativamente il tempo di esecuzione**.
