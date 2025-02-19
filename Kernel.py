@@ -38,17 +38,8 @@ class Kernel:
     def getUnsharpMasking(self):
         return self.unsharpMasking
 
-    # def getMatrix(self):
-    #     return [[self.getIdentity(), "_id"], [self.getRidge(), "_rid"], [self.getEdgeDetection(), "_edgDet"],
-    #             [self.getSharpen(), "_shar"], [self.getBoxBlur(), "_boxBlur"], [self.getGaussianBlur3(), "gaussian3"],
-    #             [self.getGaussianBlur5(), "gaussian5"], [self.getUnsharpMasking(), "_unsharpMask"]]
-
     def getMatrix(self):
-        return [[self.getBoxBlur(), "_boxBlur"], [self.getGaussianBlur3(), "gaussian3"],
+        return [[self.getIdentity(), "_id"], [self.getRidge(), "_rid"], [self.getEdgeDetection(), "_edgDet"],
+                [self.getSharpen(), "_shar"], [self.getBoxBlur(), "_boxBlur"], [self.getGaussianBlur3(), "gaussian3"],
                 [self.getGaussianBlur5(), "gaussian5"], [self.getUnsharpMasking(), "_unsharpMask"]]
 
-    # def getMatrix(self):
-    #     return [[self.getIdentity(), "_id"]]
-    # def getMatrix(self):
-    #     return [[self.getGaussianBlur3(), "gaussian3"], [self.getBoxBlur(), "_boxBlur"],
-    #             [self.getGaussianBlur5(), "gaussian5"], [self.getUnsharpMasking(), "_unsharpMask"]]
