@@ -10,30 +10,24 @@ from resizeImageParallel import iniziatlitation
 
 
 def ensure_directory_exists(directory):
-    """Crea una cartella se non esiste."""
     if not os.path.exists(directory):
         os.makedirs(directory)
 
 
 def get_image_folders(base_dir):
-    """Ottiene tutte le sottocartelle della cartella principale."""
     return [os.path.join(base_dir, folder) for folder in os.listdir(base_dir)
             if os.path.isdir(os.path.join(base_dir, folder)) and folder in ["480x270", "960x540", "1920x1080",
                                                                             "3840x2160"]]
 
 
 def get_images_from_folder(folder):
-    """Ottiene tutte le immagini da una cartella specifica."""
     return [os.path.join(folder, img) for img in os.listdir(folder) if img.endswith(('.png', '.jpg', '.jpeg'))]
 
 
 def plot_results(kernel_name, folder_times, thread_counts):
     results_dir = "Risultati"
     ensure_directory_exists(results_dir)
-
-    thread_counts_full = [1] + thread_counts  # Include il tempo sequenziale come primo valore
-
-    # Iteriamo per ogni grandezza di immagine separatamente
+    thread_counts_full = [1] + thread_counts
     for folder_name in folder_times.keys():
         time_s, time_p, time_p_vec = folder_times[folder_name]
 
@@ -41,24 +35,19 @@ def plot_results(kernel_name, folder_times, thread_counts):
         plt.figure()
         time_full = [time_s] + time_p  # Unisce il tempo sequenziale con quelli paralleli normali
         time_full_vec = [time_s] + time_p_vec  # Tempi paralleli vettorizzati
-
         plt.plot(thread_counts_full, time_full, marker='o', linestyle='-', label="Non Vett.")
         plt.plot(thread_counts_full, time_full_vec, marker='s', linestyle='--', label="Vett.")
-
         plt.xlabel("Numero di Thread (1 = Sequenziale)")
         plt.ylabel("Tempo Totale (s)")
         plt.legend()
         plt.title(f"Confronto Tempi - {folder_name} - Kernel: {kernel_name}")
         plt.savefig(os.path.join(results_dir, f"execution_times_{kernel_name}_{folder_name}.png"))
-
         # **Plot per Speedup**
         plt.figure()
         speedup = [time_s / tp if tp > 0 else 0 for tp in time_full]
         speedup_vec = [time_s / tp if tp > 0 else 0 for tp in time_full_vec]
-
         plt.plot(thread_counts_full, speedup, marker='o', linestyle='-', label="Non Vett.")
         plt.plot(thread_counts_full, speedup_vec, marker='s', linestyle='--', label="Vett.")
-
         plt.xlabel("Numero di Thread (1 = Sequenziale)")
         plt.ylabel("Speedup")
         plt.legend()
@@ -70,7 +59,7 @@ def plot_results(kernel_name, folder_times, thread_counts):
 def extract_resolution(folder):
     _, resolution = folder.split('\\')
     width, height = map(int, resolution.split('x'))
-    return width * height  # Ordiniamo in base ai pixel totali
+    return width * height
 
 
 if __name__ == "__main__":
@@ -79,7 +68,7 @@ if __name__ == "__main__":
     print(folders)
     k = Kernel()
     print(range(2, multiprocessing.cpu_count() + 2, 2))
-    thread_counts = list([2,4,8,12])
+    thread_counts = list([2, 4, 8, 12])
     folders = sorted(folders, key=extract_resolution)
     x = ""
     print("Cartelle:", folders)
@@ -90,18 +79,14 @@ if __name__ == "__main__":
         for folder in folders:
             folder_name = os.path.basename(folder)
             images = get_images_from_folder(folder)
-
             if not images:
                 continue
-
             print(f"🖼️ Processing images in folder: {folder_name}...")
             x = x + f"🖼️ Processing images in folder: {folder_name}...\n"
-            # Creazione delle cartelle di output
             serial_dir = os.path.join("imageSequential", folder_name)
             parallel_dir = os.path.join("imageParallel", folder_name)
             ensure_directory_exists(serial_dir)
             ensure_directory_exists(parallel_dir)
-
             # # Esecuzione SEQUENZIALE
             total_serial = 0
             for image_path in images:
@@ -114,7 +99,6 @@ if __name__ == "__main__":
                                         image_path.replace("image\\", "").rsplit(".", 1)[0] + kernel_name + "." +
                                         image_path.rsplit(".", 1)[1]))
                 print(f" - {folder_name} - Sequenziale: {time.time() - start_serial:.4f} s")
-
             # Esecuzione PARALLELA
             total_parallel_vec = []
             total_parallel = []
@@ -139,12 +123,9 @@ if __name__ == "__main__":
                     print(f"   {threads} threads (Vett.): {total_parallel_run_vec:.4f} s")
                 total_parallel_vec.append(total_parallel_run_vec)
                 total_parallel.append(total_parallel_run)
-
             folder_times[folder_name] = (total_serial, total_parallel, total_parallel_vec)
-
         # Generazione dei grafici per il kernel corrente
         plot_results(kernel_name, folder_times, thread_counts)
-
         # Stampa dei tempi di esecuzione per il kernel corrente
         x = x + f"\n📊 Risultati per Kernel: {kernel_name}\n"
         for folder_name, (time_s, time_p, time_p_vec) in folder_times.items():
@@ -154,7 +135,6 @@ if __name__ == "__main__":
                 speedup_vec = time_s / time_p_vec[i] if time_p_vec[i] > 0 else 0
                 x = x + f"   {threads} threads: {time_p[i]:.4f} s | SpeedUp: {speedup:.2f}x\n"
                 x = x + f"   {threads} threads (Vett.): {time_p_vec[i]:.4f} s | SpeedUp: {speedup_vec:.2f}x\n"
-
     # Apri il file in modalità scrittura ('w' per sovrascrivere, 'a' per aggiungere)
     with open("output.txt", "w", encoding="utf-8") as file:
         file.write(x)

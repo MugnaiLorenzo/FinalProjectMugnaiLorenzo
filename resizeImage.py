@@ -14,7 +14,6 @@ class ResizeImage:
         self.px_t = self.img_t.load()
         self.matrix = matrix
 
-
     def transform(self):
         for i in range(self.w - 1):
             for j in range(self.h - 1):
